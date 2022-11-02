@@ -92,3 +92,30 @@ pattern = r'life'
 script ='Life is so cool'
 DefRefinder(pattern, script)
 
+# findall 매서드
+# re.findall(패턴, 찾으려는 문자열)
+number = 'My Number is 511223-1****** and yours is 521012-2******'
+result = re.findall('\d{6}', number)        # \d{6} 패턴은 숫자를 6번 반복한 값을 의미
+print('Number >>> ', result)
+
+# 정규표현식의 탐욕 제어하기: 마침표(.)와 물음표(?)
+example = '저는 91년에 태어났습니다. 97년에는 IMF가 있었습니다. 지금은 2022년입니다.'
+result = re.findall(r'\d.+년', example)
+print(result)
+
+result = re.findall(r'\d.+?년', example)
+print(result)
+
+result = re.findall(r'\d+년', example)
+print(result)
+
+
+example = '이동민 교수님은 다음과 같이 설명했습니다(이동민, 2019). 그런데 다른 교수님은 이 문제에 대해서 다른 견해를 가지고 있었습니다(최재영, 2019). 또 다른 견해도 있었습니다(Lion, 2018).'
+result = re.findall(r'\(.+\)', example)
+print('result = ', result)
+
+result = re.findall(r'\(.+?\)', example)
+print('result = ', result)
+
+# split 매서드 - 문장 나누는 패턴 만들기
+# re.split(패턴, 문자열)
