@@ -118,4 +118,18 @@ result = re.findall(r'\(.+?\)', example)
 print('result = ', result)
 
 # split 매서드 - 문장 나누는 패턴 만들기
+# Split는 특정한 패턴이 등장할 떼 문자열을 나눕며 사용. 
 # re.split(패턴, 문자열)
+
+strSentence = 'I have a lovely dog, really. I am not telling a lie. What a pretty dog! I love this dog.'
+print(re.split(r'[.?!]', strSentence))
+# >>> ['I have a lovely dog, really', ' I am not telling a lie', ' What a pretty dog', ' I love this dog', '']
+
+strData = 'a:3; b:4; c:5'
+for i in re.split(r';', strData):
+    print(re.split(r':', i))
+# >>> ['a', '3']
+# >>> [' b', '4']
+# >>> [' c', '5']
+
+
