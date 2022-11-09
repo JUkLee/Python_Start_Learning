@@ -92,6 +92,15 @@ pattern = r'life'
 script ='Life is so cool'
 DefRefinder(pattern, script)
 
+# 정규표현식
+# \d : 숫자와 매치, [0-9]와 같습니다.
+# \D : 숫자가 아닌 것과 매치, [^0-9]와 같습니다.
+# \s : whitespace 문자와 매치, [ \t\n\r\f\v]와 같습니다. 맨 앞의 빈칸은 공백(space)을 의미합니다.
+# \S : whitespace 문자가 아닌 것과 매치, [^ \t\n\r\f\v]와 같습니다.
+# \w : 문자 + 숫자와 매치, [a-zA-Z0-9_]와 같습니다.
+# \W : 문자 + 숫자가 아닌 문자와 매치, [^a-zA-Z0-9_]와 같습니다.
+# \\ : 메타 문자가 아닌 일반 문자와 매치, 메타 문자 앞에 \를 붙이면 일반 문자를 의미합니다. 
+
 # findall 매서드
 # re.findall(패턴, 찾으려는 문자열)
 number = 'My Number is 511223-1****** and yours is 521012-2******'
@@ -132,4 +141,26 @@ for i in re.split(r';', strData):
 # >>> [' b', '4']
 # >>> [' c', '5']
 
+# sub 메서드 - 문자열 바꾸기
+# re.sub(찾을 패턴, 대체할 문자, 찾을 문자열)
+
+strSentence = 'I have a lovely dog, really. I am not telling a lie. What a pretty dog! I love this dog.'
+print(re.sub(r'dog', 'cat', strSentence))
+# >>> I have a lovely cat, really. I am not telling a lie. What a pretty cat! I love this cat.
+
+strWords = 'I am home now. \n\n\nI am with my cat.\n\n'
+print(strWords)
+# I am home now.
+#
+#
+# I am with my cat.
+#
+
+print(re.sub(r'\n', ' ', strWords))
+# >>> I am home now.    I am with my cat.
+
+# ly로 끝나는 단어 추출
+strSentence = 'I have a lovely dog, really. I am not telling a lie.'
+print(re.findall(r'\w+ly', strSentence))
+# >>> ['lovely', 'really']
 
