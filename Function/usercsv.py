@@ -1,4 +1,4 @@
-import csv, os
+import csv, os, re
 # 새롭게 시작할 때 CSV 모듈을 먼저 임포트
 
 # CSV Read Function
