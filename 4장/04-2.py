@@ -1,13 +1,12 @@
-# 4장 4~
+import os, re, sys
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname((__file__)))))      # 같은 Level의 폴더에서 import 하고 싶다면...
+from Function import Learning, usercsv
 
 # 04-4 CSV 파일 데이터 분석
 print('# 04-4 CSV 파일 데이터 분석')
 
 # Do it 외국인 비율이 3% 넘는 구 정보만 CSV 파일로 저장하기
 print('# Do it 외국인 비율이 3% 넘는 구 정보만 CSV 파일로 저장하기')
-
-import os, re
-from Function import Learning, usercsv
 
 # CSV 파일을 읽을 수 있도록 Directory 이동
 path = Learning.MoveLearningDataDir()
@@ -36,5 +35,4 @@ for i in newPop:
 
 # CSV 파일 저장하기
 usercsv.writecsv('newPop.csv', new)
-
 

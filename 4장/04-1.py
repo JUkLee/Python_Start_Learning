@@ -1,5 +1,8 @@
 #4장 1~3
 
+import os, re, sys, csv
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname((__file__)))))      # 같은 Level의 폴더에서 import 하고 싶다면...
+
 # CSV 데이터 알아보기
 import os, csv
 dataPath = r'\Learning_Data'

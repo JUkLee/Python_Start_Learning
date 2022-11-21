@@ -15,6 +15,24 @@ def opencsv(fileName):
     f.close()
     return output
 
+# CSV Read Function Jump Line
+# @Func : opencsv() 함수에서는 f를 파일 객체로 해 직접 open 하는 방식을 사용
+# @Retrun : File 객체
+# @Parameter
+#   - filenaem : (In) 파일 이름
+def opencsv(fileName, jumpLine):
+    f = open(fileName, 'r')
+    reader = csv.reader(f)
+    output = []
+    count = 0
+    for i in reader:
+        count += 1
+        if count <= jumpLine:
+            continue
+        output.append(i)
+    f.close()
+    return output
+
 # CSV write Function
 # @Func : writecsv() 함수에서는 with 문을 사용해 코드 길이가 조금 더 짧아짐
 # @Retrun : NULL
