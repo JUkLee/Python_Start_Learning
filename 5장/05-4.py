@@ -18,5 +18,10 @@ len(cf)
 cashflow = np.array(cf)
 # 이제 cf를 배열로 만들어 cashflow에 저장합니다.
 
-npv = np.npv(0.045, cashflow)
-
+import numpy_financial as np_f
+npv = np_f.npv(0.045, cashflow)
+npv
+# 174.4011295118405
+irr = np_f.irr(cashflow)
+irr
+# 0.06434936937255675
