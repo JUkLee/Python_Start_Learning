@@ -14,4 +14,29 @@ print(df)
 # 2  Chris   44   77.5
 # 3   Ryan   42   87.7
 
+print(df.sum())
+# name     MarkJaneChrisRyan
+# age                    151
+# score                339.9
+# dtype: object
+
+print(df.mean())
+# <stdin>:1: FutureWarning: The default value of numeric_only in DataFrame.mean is deprecated. In a future version, it will default to False. In addition, specifying 'numeric_only=None' is deprecated. Select only valid columns or specify the value of numeric_only to silence this warning.
+# age      37.750
+# score    84.975
+# dtype: float64
+
+print(df.age)
+# 0    33
+# 1    32
+# 2    44
+# 3    42
+# Name: age, dtype: int64
+
+print(df['age'])
+# 0    33
+# 1    32
+# 2    44
+# 3    42
+# Name: age, dtype: int64
 
