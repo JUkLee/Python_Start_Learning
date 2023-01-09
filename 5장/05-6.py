@@ -7,6 +7,3 @@ path = Learning.MoveLearningDataDir()
 print(path)
 
 
-
-
-
