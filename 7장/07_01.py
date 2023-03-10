@@ -16,3 +16,6 @@ url = r'https://news.daum.net/'
 driver.get(url)
 # 인터넷 창을 연다.
 
+
+
+
