@@ -25,8 +25,3 @@ driver.get(url)
 
 
 
-
-
-
-
-
